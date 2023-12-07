@@ -3,13 +3,13 @@
     <body>
     <h1>product info</h1>
     <?php
-    echo "<b>productName:</b> ".$product->getproductName()."<br/>";
-    echo "<b>categoryID: </b>".$product->getcategoryID()."<br/>";
-    echo "<b>price: </b>".$product->getprice()."<br/>";
+    echo "<b>ProductName:</b> ".$product->getproduct_name()."<br/>";
+    echo "<b>CategoryID: </b>".$product->getcategoryID()."<br/>";
+    echo "<b>Price: </b>".$product->getprice()."<br/>";
+    echo "<b>Stock Quantity: </b>".$product->getstock_quantity()."<br/>";
 
-    echo "<b>stockQuantity: </b>".$product->getstockQuantity()."<br/>";
-
-    echo "<b>image: </b> <br/><img src='".$product->getimage()."'/><br/>"
+    echo "<b>Image: </b> 
+    <br/><img src='".$product->getproduct_img()."'/><br/>"
     ?>
     </body>
 </html>

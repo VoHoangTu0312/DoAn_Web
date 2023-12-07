@@ -17,14 +17,12 @@
         foreach($products as $product)
         echo "
         <tr>
-            <td><a href='index.php?productid=".$product->getproductID().
-            "'>".$product->getproductName()."</a></td>
+            <td><a href='index.php?productid=".$product->getproductID()."'>".$product->getproduct_name()."</a></td>
             <td>".$product->getcategoryID()."</td>
             <td>".$product->getprice()."</td>
-            <td>".$product->getstockQuantity()."</td>
-            
+            <td>".$product->getstock_quantity()."</td>
             <td>
-            <img style='height: 150px;' src='".$product->getimage()."'/>
+            <img style='height: 150px;' src='".$product->getproduct_img()."'/>
             </td>
             
         </tr>

@@ -82,7 +82,7 @@ class Product{
         $ext = pathinfo($product_img, PATHINFO_EXTENSION);
         $new_product_img = "Product-Name-" . rand(0000, 9999) . "." . $ext;
 
-        $destination_path = "../images/food/" . $new_product_img;
+        $destination_path = "../images/product/" . $new_product_img;
 
         if (move_uploaded_file($image_temp_path, $destination_path)) {
         $this->setImageName($new_product_img);
