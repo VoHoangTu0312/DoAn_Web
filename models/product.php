@@ -29,18 +29,7 @@ class Product{
     return "Product($this->productID, $this->product_name, $this->categoryID, $this->price,$this->stock_quantity, $this->product_img)";
     }
 
-    public function insertProduct($conn) {
-        $product_name = mysqli_real_escape_string($conn, $this->getproduct_name());
-        $categoryID = mysqli_real_escape_string($conn, $this->getcategoryID());
-        $price = mysqli_real_escape_string($conn, $this->getprice());
-        $stock_quantity = mysqli_real_escape_string($conn, $this->getstock_quantity());
-        $product_img = mysqli_real_escape_string($conn, $this->getproduct_img());
-
-        $sql = "INSERT INTO tbl_products (product_name, categoryID, price, stock_quantity, product_img)
-                VALUES ('$product_name', '$categoryID', '$price', '$stock_quantity', '$product_img')";
-
-        return mysqli_query($conn, $sql);
-    }
+    
 
     public function updateProduct($conn) {
         $productID = $this->getproductID();
