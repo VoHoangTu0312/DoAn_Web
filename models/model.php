@@ -1,34 +1,26 @@
 <?php
+// require_once("modules/db_module.php");
 
-require_once("product.php"); 
-require_once("modules/db_module.php");
+// class Model {
+//     public function addProduct($productName, $categoryID, $price, $quantity, $productImg) {
+//         $link = null;
+//         taoKetNoi($link);
 
-class Model{
-public function getproductlist(){
-$link = null;
-taoKetNoi ($link);
-$result = chayTruyVanTraVeDL($link, "select * from tbl_products");
-$data = array();
-while($rows = mysqli_fetch_assoc($result)){
-$product = new Product(
-$rows["productID"],
-$rows["product_name"],
-$rows["categoryID"], 
-$rows["price"],
-$rows["stock_quantity"],
-$rows["product_img"]);
+//         // Sanitize input data before using in the query to prevent SQL injection
+//         $productName = mysqli_real_escape_string($link, $productName);
+//         $categoryID = (int)$categoryID;
+//         $price = (float)$price;
+//         $quantity = (int)$quantity;
+//         $productImg = mysqli_real_escape_string($link, $productImg);
 
-array_push($data, $product);
-}
-giaiPhongBoNho ($link, $result);
-return $data;
-}
-public function getproduct($productID){
-    $allproducts = $this->getproductlist();
-    foreach($allproducts as $product) 
-        if($product->getproductID()===$productID)
-            return $product;
-    return null;
-}
-}
+//         $query = "INSERT INTO tbl_products (product_name, categoryID, price, stock_quantity, product_img) 
+//                   VALUES ('$productName', $categoryID, $price, $quantity, '$productImg')";
+
+//         $result = chayTruyVanKhongTraVeDL($link, $query);
+
+//         giaiPhongBoNho($link, $result);
+
+//         return $result ? ['success' => true, 'message' => 'Product added successfully'] : ['success' => false, 'message' => 'Failed to add product'];
+//     }
+// }
 ?>
